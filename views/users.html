@@ -1,0 +1,29 @@
+<h1> <%- title %> </h1>
+<% users_len = users.filter((item)=> !!item); %>
+<% if (users_len.length > 0){ %>
+<table class="table table-hover mx-auto">
+    <thead>
+    <tr align="center">
+        <% for (i in users_len[0]){ %>
+        <th><%= i %></th>
+        <% }%>
+        <th>Опции</th>
+    </tr>
+    </thead>
+    <% for (user in users) {%>
+    <tr align="center">
+        <% for (i in users[user]){ %>
+        <td><%= users[user][i] %></td>
+        <% }%>
+        <td>
+            <a href="#" onClick="this.href = '/edit/'+ this.firstElementChild.innerText"><b style="display: none"><%=user%></b><i class="material-icons">border_color</i></a>
+
+            <a href="#" onClick="this.href = '/del/'+ this.firstElementChild.innerText"><b style="display: none"><%=user%></b><i class="material-icons">cancel</i></a></td>
+    </tr>
+    <% }%>
+</table>
+<% }else { %>
+ <h2>Список юзеров пуст</h2>
+
+<% } %>
+
