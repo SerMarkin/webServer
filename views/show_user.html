@@ -1,0 +1,6 @@
+<% user = users.filter((item)=> !!item?item.id == user_id:false)[0]%>
+<% if (!!user){ %>
+<h3 align="center">Id : <%= user.id %> ; Имя : <%= user.name %> ; Возраст : <%= user.age %></h3>
+<% }else{%>
+<h3>Пользователь с id:<%= user_id %> не найден</h3>
+<% }%>

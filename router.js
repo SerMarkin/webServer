@@ -47,5 +47,13 @@ router.post('/edit',async ctx=>{
     users[body.id].age = body.age;
     ctx.redirect('/')
 });
-
+router.get('/user/:id',async ctx=>{
+    const id = ctx.params.id;
+    console.log(id)
+    await ctx.render('show_user',{
+        title:'User',
+        users:users,
+        user_id: id
+    })
+});
 module.exports = router;
