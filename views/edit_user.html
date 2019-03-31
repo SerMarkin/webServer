@@ -1,0 +1,13 @@
+<h1> <%- title %> </h1>
+<div align="center"><form action="/edit" method="POST">
+    Имя:<br>
+    <input id="idHiddenInput" type="text" name="id" style="display: none" value="<%- user_id %>">
+    <input type="text" name="name" value="<%- users[user_id].name %>" > <br>
+    Возраст: <br>
+    <input type="text" name="age" value="<%- users[user_id].age %>"> <br><br>
+    <input type="submit" label="Push">
+</form>
+</div>
+<script>
+
+</script>
